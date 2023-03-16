@@ -2,10 +2,16 @@ import { galleryItems } from './gallery-items.js';
 // Change code below this line
 const imageGallery = document.querySelector('.gallery');
 console.log(imageGallery);
-const galleryItem = galleryItems.map(image => `<a class="gallery_link" href="${image.original}">
-<img class="gallery_image" src= "${image.preview}" data-source= "${image.original}" alt="${image.description}"></a>`).join("");
-imageGallery.insertAdjacentHTML("beforeend", galleryItem);
-console.log(galleryItem);
+
+const galleryElements = galleryItems.map((item) => 
+    `<div class="gallery__item">
+        <a class="gallery__link" href="${item.original}">
+            <img class="gallery_image" src= "${item.preview}" data-source= "${item.original}" alt="${item.description}"/>
+            </a>
+            </div>`).join("");
+
+imageGallery.insertAdjacentHTML("beforeend", galleryElements);
+
 
 imageGallery.addEventListener("click", (event) => {
     event.preventDefault();
