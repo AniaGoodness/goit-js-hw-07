@@ -25,16 +25,18 @@ const showOriginalImage = (event) => {
     const showOriginalImage = event.target.getAttribute("data-sourse");
     const instance = basicLightbox.create(`<img src="${showOriginalImage}" width="800" height="600">`);
     instance.show();
-}
-    imageGallery.addEventListener("click", showOriginalImage);
-
-
+        
     window.addEventListener("keydown", (event) => {
-					//const instance = 
+
                     if (event.key === "Escape") {
 					    instance.close();
 					}
 				});
+}
+    imageGallery.addEventListener("click", showOriginalImage);
+
+
+
 /*
     const showOriginalImage = event.target.getAttribute("data-sourse")
     galleryElements.src = `${image.original}`;
