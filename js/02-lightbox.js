@@ -15,3 +15,20 @@ const galleryElements = galleryItems.map((item) =>
 
 imageGallery.insertAdjacentHTML("beforeend", galleryElements);
 
+const showOriginalImage = (event) => {
+    event.preventDefault();
+        if (event.target.nodeName !== "IMG") {
+        return;
+    }
+    const showOriginalImage = event.target.getAttribute("data-sourse");
+    const instance = basicLightbox.create(`<img src="${showOriginalImage}" width="800" height="600">`);
+    instance.show();
+        
+    window.addEventListener("keydown", (event) => {
+
+                    if (event.key === "Escape") {
+					    instance.close();
+					}
+				});
+}
+    imageGallery.addEventListener("click", showOriginalImage);
