@@ -22,16 +22,15 @@ const showOriginalImage = (event) => {
         if (event.target.nodeName !== "IMAGE") {
         return;
     }
-    const showOriginalImage = event.target.dataset.original;
-    galleryElements.src = `${image.original}`;
-
+    const showOriginalImage = event.target.getAttribute("data-sourse")
+    const instance = basicLightbox.create(`<img src="${showOriginalImage}" width="800" height="600">`);
+    instance .show();
 }
-
-imageGallery.addEventListener("click", showOriginalImage);
+    imageGallery.addEventListener("click", showOriginalImage);
 
 /*
-    const showOriginalImage = event.target.dataset.original;
-    Elements.src = `${image.original}`;
+    const showOriginalImage = event.target.getAttribute("data-sourse")
+    galleryElements.src = `${image.original}`;
 }*/
 
     
