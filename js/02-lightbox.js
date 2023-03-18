@@ -21,14 +21,7 @@ const showOriginalImage = (event) => {
         return;
     }
     const showOriginalImage = event.target.getAttribute("data-sourse");
-    const instance = basicLightbox.create(`<img src="${showOriginalImage}" width="800" height="600">`);
-    instance.show();
-        
-    window.addEventListener("keydown", (event) => {
-
-                    if (event.key === "Escape") {
-					    instance.close();
-					}
-				});
+    const lightbox = new SimpleLightbox(`<img src="${showOriginalImage}" width="800" height="600">`);
+    return lightbox; 
 }
     imageGallery.addEventListener("click", showOriginalImage);
