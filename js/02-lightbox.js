@@ -25,7 +25,7 @@ const showOriginalImage = (event) => {
 
     let lightbox = new SimpleLightbox('.gallery a', { 
         captionType: "alt",
-        captionData: "alt",
+        captionsData: "alt",
         captionDelay: 250, });
     
     return lightbox; 
