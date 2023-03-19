@@ -3,6 +3,12 @@ import { galleryItems } from './gallery-items.js';
 
 const imageGallery = document.querySelector('.gallery');
 console.log(imageGallery);
+
+
+
+
+/*
+
 const galleryElements = galleryItems.map((item) => 
     `<li class="gallery__item">
         <a class="gallery__link" href="${item.original}">
