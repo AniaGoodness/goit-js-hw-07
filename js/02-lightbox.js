@@ -5,10 +5,6 @@ const imageGallery = document.querySelector('.gallery');
 console.log(imageGallery);
 
 
-
-
-/*
-
 const galleryElements = galleryItems.map((item) => 
     `<li class="gallery__item">
         <a class="gallery__link" href="${item.original}">
@@ -26,8 +22,13 @@ const showOriginalImage = (event) => {
         if (event.target.nodeName !== "IMG") {
         return;
     }
-    const showOriginalImage = event.target.getAttribute("data-sourse");
-    const lightbox = new SimpleLightbox(`<img src="${showOriginalImage}" width="800" height="600">`);
+
+    let lightbox = new SimpleLightbox('.gallery a', { 
+        captionType: "alt",
+        captionData: "alt",
+        captionDelay: 250, });
+    
     return lightbox; 
+
 }
     imageGallery.addEventListener("click", showOriginalImage);
